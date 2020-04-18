@@ -107,38 +107,11 @@ public class SearchService {
         }catch(Exception e){
             e.printStackTrace();
         }
-        /*
-        Search Service will return the map containing 10 key-value pairs.
-        with Key being the URL and value being the Title.
-         */
-
-        /*if(map.size()>0){
-            System.out.println("Top 3 results are :");
-            System.out.println("Title" + " \t\t\t" + "URL");
-            for(Map.Entry<String,String> entry : map.entrySet()){
-                System.out.println(entry.getValue() +"\t" + entry.getKey());
-                count++;
-                if(count == 3){
-                    break;
-                }
-            }
-        }else{
-            System.out.println("No results exists!!!");
-        }*/
-        JSONObject jsonObject = null;
         if(map.size()>0){
             return map;
         }else{
             map.put("Empty Result","No Data Exists");
             return map;
         }
-
-        /*if(null != jsonObject){
-            return jsonObject;
-        }else{
-            jsonObject = new JSONObject();
-            jsonObject.put("No data Exists",-1);
-            return jsonObject;
-        }*/
     }
 }
