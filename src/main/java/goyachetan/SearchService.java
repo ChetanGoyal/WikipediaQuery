@@ -15,16 +15,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Call will carry out the business logic for the input string and return the response to main.
+ * Class that has a getQuery method that will take in an input query and return the
+ * response by calling off the wikipedia URL with required params.
  */
 @RestController
 public class SearchService {
 
     /**
-     * @Description Method will take in the input string and execute the url to the response
+     * Method will take in the input string and execute the url to the response
      * and then convert it in to JSON and then parse it to put the title and full url in the map.
-     * @param
-     * @return nothing
+     * @param String : inputString
+     * @return Map<String,String>
      */
 
     @ResponseBody
@@ -32,12 +33,11 @@ public class SearchService {
     @QueryParam("inputQuery")
     public Map<String,String> getResult(String inputString){
 
-        //String inputString = "Rabbit";
         Map<String,String> map = new HashMap<>();
 
         /*
         2: Making sure that there are no special character in the input string.
-        Will use regex to replace all special characters with space.
+            Will use regex to replace all special characters with space.
          */
 
         inputString = inputString.replaceAll("[^a-zA-Z0-9]", " ");
